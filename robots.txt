@@ -1,0 +1,25 @@
+# Robots.txt for ASCII-Vision 95
+# ASCII Art Generator Tool
+
+User-agent: *
+Allow: /
+Allow: /assets/images/
+Disallow: /assets/scripts/
+Disallow: /assets/stylesheets/
+Disallow: /docs/
+
+# Sitemap location
+Sitemap: https://www.ascii-vision-95.vercel.app/sitemap.xml
+
+# Crawl delay (optional - helps prevent server overload)
+Crawl-delay: 1
+
+# Allow major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

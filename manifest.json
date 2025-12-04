@@ -1,0 +1,43 @@
+{
+    "name": "ASCII-Vision 95",
+    "short_name": "ASCII-Vision",
+    "description": "Convert images to ASCII art with this retro Windows 95-style tool",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#008080",
+    "theme_color": "#008080",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "/assets/images/favicons/web-app-manifest-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/assets/images/favicons/web-app-manifest-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "graphics",
+        "utilities",
+        "entertainment"
+    ],
+    "screenshots": [
+        {
+            "src": "/assets/images/screenshots/screenshot-desktop.png",
+            "sizes": "2559x1396",
+            "type": "image/png",
+            "form_factor": "wide"
+        },
+        {
+            "src": "/assets/images/screenshots/screenshot-mobile.png",
+            "sizes": "738x1359",
+            "type": "image/png",
+            "form_factor": "narrow"
+        }
+    ]
+}

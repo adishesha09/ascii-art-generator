@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Metadata -->
+    <title>ASCII-Vision 95 | Retro Image to ASCII Converter Tool</title>
+    <meta name="description"
+        content="Convert images to ASCII art with this retro Windows 95-style tool. Free online ASCII art generator with multiple character sets and adjustable settings.">
+    <meta name="keywords"
+        content="ASCII art, image converter, 90s tool, retro computer, text art, image to text, old school">
+    <meta name="author" content="Adishesha Nandkoomar, Spectra Studios">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.ascii-vision-95.vercel.app">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ascii-vision-95.vercel.app">
+    <meta property="og:title" content="ASCII-Vision 95 | Retro Image to ASCII Converter Tool">
+    <meta property="og:description"
+        content="Convert images to ASCII art with this retro Windows 95-style tool. Free online ASCII art generator with multiple character sets and adjustable settings.">
+    <meta property="og:site_name" content="ASCII-Vision 95">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.ascii-vision-95.vercel.app">
+    <meta name="twitter:title" content="ASCII-Vision 95 | Retro Image to ASCII Converter">
+    <meta name="twitter:description"
+        content="Transform images into ASCII art with this nostalgic Windows 95-style web tool. Free, no signup required.">
+    <meta name="twitter:creator" content="@adishesha_n">
+
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicons/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicons/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#008080">
+    <meta name="msapplication-TileColor" content="#008080">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+    <!-- Preconnect to External Resources -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/assets/stylesheets/boot.css">
+    <link rel="stylesheet" href="/assets/stylesheets/style.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "ASCII-Vision 95",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "url": "https://www.ascii-vision-95.vercel.app",
+        "description": "Convert images to ASCII art with this retro Windows 95-style tool. Free online ASCII art generator with multiple character sets, color modes, and adjustable settings.",
+        "browserRequirements": "Requires JavaScript. Requires HTML5.",
+        "softwareVersion": "1.0",
+        "author": {
+            "@type": "Person",
+            "name": "Adishesha Nandkoomar",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Spectra Studios",
+                "url": "https://spectrastudios.co.za"
+            }
+        },
+        "creator": {
+            "@type": "Person",
+            "name": "Adishesha Nandkoomar"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "6 character sets for different ASCII art styles (Dense, Medium, Light, Blocks, Simple, Retro)",
+            "Full color and monochrome ASCII art modes",
+            "Adjustable output width (40-120 characters)",
+            "Brightness and contrast controls (±50 levels)",
+            "Live image preview before and after processing",
+            "Copy to clipboard functionality",
+            "Save ASCII art as text file (.txt)",
+            "Export as PNG image with color preservation",
+            "Color inversion toggle",
+            "Drag-and-drop image upload",
+            "Mobile-responsive design",
+            "Retro Windows 95 interface"
+        ],
+        "screenshot": "https://www.ascii-vision-95.vercel.app/assets/images/preview.png",
+        "datePublished": "2025-12-02",
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <!-- BreadcrumbList Structured Data -->
+    <!-- I can't believe you dorks are actually looking at this code. I'm just tryna convince myself that I'm good at SEO. -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.ascii-vision-95.vercel.app"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "ASCII Art Converter",
+                "item": "https://www.ascii-vision-95.vercel.app/index.html"
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Desktop Container -->
+    <div class="desktop">
+
+        <!-- Windows 95 Taskbar -->
+        <div class="taskbar">
+            <div class="start-btn">
+                <span class="start-icon">
+                    <i class="fas fa-play"></i>
+                </span>
+                Start
+            </div>
+            <div class="taskbar-items">
+                <div class="taskbar-item active">ASCII-Vision 95</div>
+                <div class="taskbar-item">README.TXT</div>
+                <div class="clock" id="clock">00:00</div>
+            </div>
+        </div>
+
+        <!-- Main Application Window -->
+        <div class="window" id="mainWindow">
+            <!-- Window Header -->
+            <div class="window-header">
+                <div class="window-title">
+                    <span class="window-icon">
+                        <i class="fas fa-image"></i>
+                    </span>
+                    ASCII-Vision 95
+                </div>
+                <div class="window-controls">
+                    <button class="window-btn">_</button>
+                    <button class="window-btn">□</button>
+                    <button class="window-btn">×</button>
+                </div>
+            </div>
+
+            <!-- Menu Bar -->
+            <div class="window-menu">
+                <span class="menu-item">File</span>
+                <span class="menu-item">Edit</span>
+                <span class="menu-item">View</span>
+                <span class="menu-item">Options</span>
+                <span class="menu-item">Help</span>
+            </div>
+
+            <!-- Window Content -->
+            <div class="window-content">
+
+                <!-- Application Title -->
+                <div class="app-title">
+                    <h1>
+                        <span class="ascii-title">╔═══════════════════════════════════╗<br>║ ASCII-VISION 95 ║<br>║
+                            Image to ASCII Converter ║<br>╚═══════════════════════════════════╝</span>
+                    </h1>
+                    <p class="app-subtitle">
+                        A retro computing tool developed by Adishesha Nandkoomar<br>
+                        <a href="https://spectrastudios.co.za" target="_blank" rel="noopener noreferrer"
+                            class="studio-link">
+                            Spectra Studios
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Main Content Grid -->
+                <div class="content-grid">
+
+                    <!-- Control Panel (Left Side) -->
+                    <div class="control-panel">
+                        <!-- File Operations Section -->
+                        <div class="panel-section">
+                            <div class="section-header">
+                                <div class="section-icon">
+                                    <i class="fas fa-folder"></i>
+                                </div>
+                                <h3>File Operations</h3>
+                            </div>
+                            <div class="file-upload">
+                                <label for="fileInput" class="file-label">
+                                    <span class="file-icon">
+                                        <i class="fas fa-file" aria-hidden="true"></i>
+                                    </span>
+                                    Select Image File
+                                </label>
+                                <input type="file" id="fileInput" accept="image/*"
+                                    aria-label="Upload image file for ASCII conversion">
+                                <div class="file-info" id="fileInfo">No file selected</div>
+                            </div>
+                            <button id="sampleBtn" class="btn btn-secondary">
+                                <span class="btn-icon">
+                                    <i class="fas fa-floppy-disk"></i>
+                                </span>
+                                Load Sample
+                            </button>
+                        </div>
+
+                        <!-- Render Settings Section -->
+                        <div class="panel-section">
+                            <div class="section-header">
+                                <div class="section-icon">
+                                    <i class="fas fa-cog"></i>
+                                </div>
+                                <h3>Render Settings</h3>
+                            </div>
+
+                            <!-- Output Width Control -->
+                            <div class="control-group">
+                                <label for="widthSlider">
+                                    <span class="control-icon">
+                                        <i class="fas fa-arrows-left-right"></i>
+                                    </span>
+                                    Output Width:
+                                    <span id="widthValue" class="value-display">80</span>
+                                </label>
+                                <input type="range" id="widthSlider" min="40" max="120" value="80" class="slider">
+                                <div class="slider-labels">
+                                    <span>Small</span>
+                                    <span>Large</span>
+                                </div>
+                            </div>
+
+                            <!-- Character Set Selection -->
+                            <div class="control-group">
+                                <label for="charSet">
+                                    <span class="control-icon">
+                                        <i class="fas fa-font"></i>
+                                    </span>
+                                    Character Set:
+                                </label>
+                                <select id="charSet" class="dropdown">
+                                    <option value="dense">@#$%&*+-:. (Dense)</option>
+                                    <option value="medium" selected>#$%*+-:. (Medium)</option>
+                                    <option value="light">▓▒░:. (Light)</option>
+                                    <option value="blocks">█▄▌▐· (Blocks)</option>
+                                    <option value="simple">@*. (Simple)</option>
+                                    <option value="retro">║═╔╗╚╝ (Retro Box)</option>
+                                </select>
+                            </div>
+
+                            <!-- Brightness Control -->
+                            <div class="control-group">
+                                <label for="brightnessSlider">
+                                    <span class="control-icon">
+                                        <i class="fas fa-sun"></i>
+                                    </span>
+                                    Brightness:
+                                    <span id="brightnessValue" class="value-display">0</span>
+                                </label>
+                                <input type="range" id="brightnessSlider" min="-50" max="50" value="0" class="slider">
+                            </div>
+
+                            <!-- Contrast Control -->
+                            <div class="control-group">
+                                <label for="contrastSlider">
+                                    <span class="control-icon">
+                                        <i class="fas fa-circle-half-stroke"></i>
+                                    </span>
+                                    Contrast:
+                                    <span id="contrastValue" class="value-display">0</span>
+                                </label>
+                                <input type="range" id="contrastSlider" min="-50" max="50" value="0" class="slider">
+                            </div>
+
+                            <!-- Color Mode Control -->
+                            <div class="control-group">
+                                <label for="colorMode">
+                                    <span class="control-icon">
+                                        <i class="fas fa-palette"></i>
+                                    </span>
+                                    Color Mode:
+                                </label>
+                                <select id="colorMode" class="dropdown">
+                                    <option value="monochrome" selected>Monochrome</option>
+                                    <option value="color">Full Color</option>
+                                </select>
+                            </div>
+
+                            <!-- Color Palette Control -->
+                            <div class="control-group" id="paletteGroup" style="display: none;">
+                                <label for="colorPalette">
+                                    <span class="control-icon">
+                                        <i class="fas fa-swatchbook"></i>
+                                    </span>
+                                    Color Palette:
+                                </label>
+                                <select id="colorPalette" class="dropdown">
+                                    <option value="original" selected>Original Colors</option>
+                                    <option value="matrix">Matrix Green</option>
+                                    <option value="amber">Amber Terminal</option>
+                                    <option value="cyan">Cyan/Blue</option>
+                                    <option value="fire">Fire (Red/Orange)</option>
+                                    <option value="ice">Ice (Blue/White)</option>
+                                    <option value="purple">Purple Haze</option>
+                                    <option value="grayscale">Grayscale</option>
+                                </select>
+                            </div>
+
+                            <!-- Render Button -->
+                            <button id="renderBtn" class="btn btn-primary">
+                                <span class="btn-icon">
+                                    <i class="fas fa-play"></i>
+                                </span>
+                                Render ASCII
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Output Panel (Right Side) -->
+                    <div class="output-panel">
+                        <div class="panel-section">
+                            <div class="section-header">
+                                <div class="section-icon">
+                                    <i class="fas fa-print"></i>
+                                </div>
+                                <h3>ASCII Output</h3>
+                            </div>
+
+                            <!-- Image Preview Section -->
+                            <div class="preview-container">
+                                <div class="preview-window">
+                                    <div class="preview-header">
+                                        <span class="preview-title">Original Preview</span>
+                                    </div>
+                                    <img id="originalPreview" class="image-preview"
+                                        alt="Original uploaded image preview" style="display: none;">
+                                </div>
+                                <div class="preview-window">
+                                    <div class="preview-header">
+                                        <span class="preview-title">Processed</span>
+                                    </div>
+                                    <canvas id="processedPreview" class="image-preview" role="img"
+                                        aria-label="Processed image with brightness and contrast adjustments"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- ASCII Output Container -->
+                            <div class="output-container">
+                                <div class="output-header">
+                                    <span class="output-title">ASCII Art Output</span>
+                                    <div class="output-controls">
+                                        <button id="copyBtn" class="btn-small">
+                                            <i class="fas fa-copy"></i> Copy
+                                        </button>
+                                        <button id="downloadBtn" class="btn-small">
+                                            <i class="fas fa-download"></i> Save TXT
+                                        </button>
+                                        <button id="savePngBtn" class="btn-small">
+                                            <i class="fas fa-image"></i> Save PNG
+                                        </button>
+                                        <button id="invertBtn" class="btn-small">
+                                            <i class="fas fa-adjust fa-flip-horizontal"></i> Invert
+                                        </button>
+                                        <button id="clearBtn" class="btn-small">
+                                            <i class="fas fa-times"></i> Clear
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="ascii-output-container">
+                                    <pre id="ascii" class="ascii-output" role="region" aria-label="ASCII art output"
+                                        aria-live="polite">╔══════════════════════════════════════════════╗
+║                                              ║
+║      Upload an image to generate ASCII       ║
+║                                              ║
+╚══════════════════════════════════════════════╝</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Content Grid -->
+
+            </div>
+            <!-- End Window Content -->
+        </div>
+        <!-- End Main Application Window -->
+
+        <!-- README Window -->
+        <div class="window" id="readmeWindow"
+            style="display: none; width: 500px; height: 400px; position: absolute; top: 100px; left: 50px;">
+            <div class="window-header">
+                <div class="window-title">
+                    <span class="window-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </span>
+                    README.TXT
+                </div>
+                <div class="window-controls">
+                    <button class="window-btn" onclick="closeReadme()">×</button>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="readme-content">
+                    <div class="readme-header">
+                        <h1>ASCII-VISION 95</h1>
+                        <p class="version">Version 1.0</p>
+                    </div>
+
+                    <section class="readme-section">
+                        <h2>About</h2>
+                        <p>ASCII-VISION 95 is a retro-styled image to ASCII art converter that emulates the classic
+                            Windows 95 interface. Transform any image into text-based art with authentic mid-90s
+                            aesthetics and modern color capabilities.</p>
+                    </section>
+
+                    <section class="readme-section">
+                        <h2>Features</h2>
+                        <ul>
+                            <li><strong>Multiple Character Sets:</strong> Choose from 6 different ASCII character styles
+                                (Dense, Medium, Light, Blocks, Simple, Retro)</li>
+                            <li><strong>Color Mode:</strong> Generate monochrome or full-color ASCII art using original
+                                image colors</li>
+                            <li><strong>Adjustable Output:</strong> Control width from 40-120 characters</li>
+                            <li><strong>Image Processing:</strong> Fine-tune brightness and contrast (±50 levels)</li>
+                            <li><strong>Live Preview:</strong> View original and processed images side-by-side</li>
+                            <li><strong>Multiple Export Options:</strong> Copy to clipboard, save as .txt, or export as
+                                PNG image</li>
+                            <li><strong>Color Inversion:</strong> Toggle between positive and negative output</li>
+                            <li><strong>Window Management:</strong> Draggable, resizable, minimize/maximize windows</li>
+                            <li><strong>Responsive Design:</strong> Works on desktop, tablet, and mobile devices</li>
+                        </ul>
+                    </section>
+
+                    <section class="readme-section">
+                        <h2>Quick Start Guide</h2>
+                        <ol>
+                            <li><strong>Load an Image:</strong> Click "Select Image File" or use the "Load Sample"
+                                button to try the demo</li>
+                            <li><strong>Adjust Settings:</strong> Choose your preferred character set, color mode
+                                (monochrome or full color), output width, and
+                                image adjustments</li>
+                            <li><strong>Generate:</strong> Click "Render ASCII" to create your ASCII art</li>
+                            <li><strong>View Output:</strong> <strong>Scroll within the ASCII output box</strong> to see
+                                the full render (output may be larger than the visible area)</li>
+                            <li><strong>Export:</strong> Use "Copy" to clipboard, "Save TXT" for text file, or "Save
+                                PNG" for a colorful image export when in color mode
+                            </li>
+                        </ol>
+                    </section>
+
+                    <section class="readme-section">
+                        <h2>Using on Mobile</h2>
+                        <ul>
+                            <li><strong>Touch to Upload:</strong> Tap "Select Image File" to choose photos from your
+                                device gallery or camera</li>
+                            <li><strong>Large Canvas View:</strong> The ASCII output canvas now occupies 65-70% of your
+                                screen height for optimal viewing without scrolling</li>
+                            <li><strong>Scroll Controls:</strong> Swipe up/down on the main window to access all
+                                controls on smaller screens</li>
+                            <li><strong>Locked Windows:</strong> Window dragging and resizing are disabled on mobile for
+                                a better user experience and to prevent accidental disruption</li>
+                            <li><strong>Pinch to Zoom:</strong> Zoom in on the ASCII output for better detail visibility
+                            </li>
+                            <li><strong>Landscape Mode:</strong> Rotate your device to landscape for an even better
+                                viewing experience</li>
+                            <li><strong>Share Options:</strong> Use "Copy" to share ASCII art in messaging apps, or
+                                "Save PNG" to save to your photo gallery</li>
+                            <li><strong>Tip:</strong> Lower the output width (40-60) for better mobile viewing and
+                                faster rendering</li>
+                            <li><strong>Note:</strong> Adjusting the output width beyond 100 might cause page overflow,
+                                so try to avoid it if possible</li>
+                        </ul>
+                    </section>
+
+                    <section class="readme-section">
+                        <h2>Menu Options</h2>
+                        <div class="menu-help">
+                            <div class="menu-item-help">
+                                <strong>File:</strong> Open images, load samples, save output, exit application
+                            </div>
+                            <div class="menu-item-help">
+                                <strong>Edit:</strong> Copy ASCII art, clear output, invert colors
+                            </div>
+                            <div class="menu-item-help">
+                                <strong>View:</strong> Maximize window, toggle CRT effect
+                            </div>
+                            <div class="menu-item-help">
+                                <strong>Options:</strong> Access character sets, adjust brightness/contrast, reset
+                                settings
+                            </div>
+                            <div class="menu-item-help">
+                                <strong>Help:</strong> View this README, about information, visit developer website
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="readme-section">
+                        <h2>Tips for Best Results</h2>
+                        <ul>
+                            <li>Use high-contrast images for clearer ASCII output</li>
+                            <li>Try "Full Color" mode for vibrant, colorful ASCII art</li>
+                            <li>Start with the "Medium" character set for balanced detail</li>
+                            <li>Adjust output width based on your display size (40-60 for mobile, 80-120 for desktop)
+                            </li>
+                            <li>Try the "Blocks" character set for solid, graphic results</li>
+                            <li>Use brightness/contrast controls to enhance detail visibility</li>
+                            <li><strong>Remember to scroll within the ASCII output box</strong> to view larger renders
+                                in full</li>
+                            <li>When in color mode, export as PNG to preserve colors when sharing your ASCII art</li>
+                        </ul>
+                    </section>
+
+                    <section class="readme-section readme-footer">
+                        <h2>Developer Information</h2>
+                        <p><strong>Created by:</strong> Adishesha Nandkoomar</p>
+                        <p><strong>Website:</strong> <a href="https://spectrastudios.co.za"
+                                target="_blank">spectrastudios.co.za</a></p>
+                        <p><strong>Instagram:</strong> <a href="https://instagram.com/spectra._.studios"
+                                target="_blank">@spectra._.studios</a></p>
+                        <p class="copyright">© 1995-2025 Spectra Studios. All rights reserved.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- End README Window -->
+
+        <!-- Desktop Icons -->
+        <div class="desktop-icons">
+            <div class="desktop-icon" onclick="openReadme()">
+                <div class="icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <span>README</span>
+            </div>
+            <div class="desktop-icon" onclick="openMainWindow()">
+                <div class="icon">
+                    <i class="fas fa-image"></i>
+                </div>
+                <span>ASCII-Vision</span>
+            </div>
+        </div>
+        <!-- End Desktop Icons -->
+
+    </div>
+    <!-- End Desktop Container -->
+
+    <!-- CRT Screen Effect -->
+    <div class="crt-effect"></div>
+
+    <!-- Application Scripts -->
+    <script src="/assets/scripts/boot.js"></script>
+    <!-- Load modules in dependency order -->
+    <script src="/assets/scripts/image-processor.js"></script>
+    <script src="/assets/scripts/ascii-converter.js"></script>
+    <script src="/assets/scripts/window-manager.js"></script>
+    <script src="/assets/scripts/ui-controls.js"></script>
+    <script src="/assets/scripts/main.js"></script>
+</body>
+
+</html>

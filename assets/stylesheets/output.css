@@ -1,0 +1,76 @@
+/* Preview containers */
+.preview-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.preview-window {
+    background-color: white;
+    border: 2px inset #dfdfdf;
+}
+
+.preview-header {
+    background-color: #c0c0c0;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 1px solid #808080;
+}
+
+.image-preview {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    background-color: #f0f0f0;
+    display: block;
+}
+
+/* Output container */
+.output-container {
+    background-color: white;
+    border: 2px inset #dfdfdf;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.output-header {
+    background-color: #c0c0c0;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 1px solid #808080;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.output-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.ascii-output-container {
+    flex: 1;
+    overflow: auto;
+    padding: 10px;
+    background-color: #000;
+    overflow-x: auto;
+    /* Ensure horizontal scrolling */
+}
+
+.ascii-output {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    line-height: 1;
+    color: #0f0;
+    margin: 0;
+    white-space: pre;
+    text-align: left;
+    /* Change to left to prevent forcing width */
+    min-height: 100%;
+    width: fit-content;
+    /* Only as wide as content */
+}
