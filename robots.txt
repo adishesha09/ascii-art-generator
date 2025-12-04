@@ -9,7 +9,7 @@ Disallow: /assets/stylesheets/
 Disallow: /docs/
 
 # Sitemap location
-Sitemap: https://www.ascii-vision-95.vercel.app/sitemap.xml
+Sitemap: https://ascii-vision-95.vercel.app/sitemap.xml
 
 # Crawl delay (optional - helps prevent server overload)
 Crawl-delay: 1
