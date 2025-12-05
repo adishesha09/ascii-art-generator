@@ -396,8 +396,8 @@ function handleSavePng(button) {
 function handleInvert(button) {
   AppState.isInverted = !AppState.isInverted;
   button.innerHTML = AppState.isInverted
-    ? '<i class="fas fa-adjust"></i> Revert'
-    : '<i class="fas fa-adjust fa-flip-horizontal"></i> Invert';
+    ? '<i class="fas fa-adjust fa-flip-horizontal"></i> Invert'
+    : '<i class="fas fa-adjust"></i> Revert';
 
   if (AppState.currentImage) {
     handleRender();
