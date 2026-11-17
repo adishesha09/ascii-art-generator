@@ -1,0 +1,46 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'MS Sans Serif', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #008080;
+    color: #000;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* CRT monitor effect */
+.crt-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    background:
+        repeating-linear-gradient(0deg,
+            rgba(0, 0, 0, 0.15) 0px,
+            rgba(0, 0, 0, 0.15) 1px,
+            transparent 1px,
+            transparent 2px);
+    opacity: 0.3;
+}
+
+/* Desktop simulation */
+.desktop {
+    width: 100%;
+    height: 100vh;
+    background-color: #008080;
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(0, 100, 100, 0.2) 1px, transparent 2px),
+        radial-gradient(circle at 75% 75%, rgba(0, 100, 100, 0.2) 1px, transparent 2px);
+    background-size: 50px 50px;
+    position: relative;
+    overflow: hidden;
+}
